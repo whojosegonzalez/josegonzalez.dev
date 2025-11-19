@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* optional demo styles so you see it clearly working */
+:root { color-scheme: light dark; }
