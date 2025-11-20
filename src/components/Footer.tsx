@@ -1,4 +1,5 @@
 import { site } from "../config/site";
+const ext = (u: string) => (u.startsWith("http") ? u : `https://${u}`);
 
 export default function Footer() {
   return (
@@ -7,17 +8,8 @@ export default function Footer() {
         <span>© {new Date().getFullYear()} {site.name}</span>
         <div className="flex gap-4">
           <a className="hover:underline" href={`mailto:${site.email}`}>Email</a>
-          <a className="hover:underline" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
-          {/* LinkedIn placeholder until you provide the URL */}
-          <a
-            className="hover:underline opacity-60 pointer-events-none"
-            title="Add LinkedIn URL in src/config/site.ts"
-            href={site.linkedin}
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
+          <a className="hover:underline" href={ext(site.github)} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a className="hover:underline" href={ext(site.linkedin)} target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </footer>
