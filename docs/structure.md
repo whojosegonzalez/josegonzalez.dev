@@ -33,3 +33,17 @@ A living map of all key folders and files.
 | Path | Purpose |
 |------|----------|
 | `/docs/structure.md` | This file — keeps track of project architecture and additions |
+
+---
+
+## data/
+| Path | Purpose |
+|------|---------|
+| `/src/data/projects.ts` | Typed source of truth for all project cards |
+
+---
+
+## components/
+| Path | Purpose |
+|------|---------|
+| `/src/components/ProjectCard.tsx` | Reusable card component for the Projects grid |
