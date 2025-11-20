@@ -2,6 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (() => {
+        try {
+          const ls = localStorage.getItem('theme'); // 'dark' | 'light' | null
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const wantDark = ls ? ls === 'dark' : systemDark;
+          document.documentElement.classList.toggle('dark', wantDark);
+        } catch {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>josegonzalez.dev</title>
