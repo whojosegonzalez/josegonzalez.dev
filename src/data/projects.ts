@@ -2,7 +2,7 @@ export type ProjectStatus = "live" | "demo" | "static" | "wip";
 export type ProjectType = "web" | "download" | "bot" | "showcase";
 
 export interface ProjectLink {
-  label: "Demo" | "GitHub" | "Docs" | "Download" | "Info";
+  label: "Demo" | "GitHub" | "Download" | "Info";
   href: string;
   external?: boolean;
 }
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     tech: ["Java", "Hadoop", "MapReduce"],
     image: "/assets/movie-aggregator.jpg",
     links: [
-      { label: "Docs", href: "/movieaggregator" },
+      { label: "Info", href: "/movieaggregator" },
       { label: "GitHub", href: "https://github.com/whojosegonzalez/<movie-aggregator-repo>", external: true },
     ],
   },
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     image: "/assets/nexustrade.jpg",
     links: [
       { label: "GitHub", href: "https://github.com/whojosegonzalez/nexustrade", external: true },
-      { label: "Docs", href: "/nexustrade" },
+      { label: "Info", href: "/nexustrade" },
     ],
   },
 ];
