@@ -86,7 +86,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold">About Me</h2>
         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
           I am a software engineer focused on solving real-world problems through code. 
-          My goal with **josegonzalez.dev** is to move away from expensive website builders 
+          My goal with <strong className="font-semibold text-slate-900 dark:text-white">JoseGonzalez.dev</strong> is to move away from expensive website builders 
           and create a centralized, custom-built home for all my software, including 
           web apps, desktop tools, and automation bots.
         </p>

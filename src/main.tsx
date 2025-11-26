@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import MovieAggregator from "./pages/MovieAggregator";
 import NeXusTrade from "./pages/NeXusTrade";
+import MinuteFlow from "./pages/MinuteFlow";
 import ScrollToTop from "./components/ScrollToTop";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/contact" element={<Contact />} />
           <Route path="/movieaggregator" element={<MovieAggregator />} />
           <Route path="/nexustrade" element={<NeXusTrade />} />
+          <Route path="/minuteflow" element={<MinuteFlow />} />
         </Route>
       </Routes>
     </BrowserRouter>

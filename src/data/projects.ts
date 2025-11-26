@@ -2,7 +2,7 @@ export type ProjectStatus = "live" | "demo" | "static" | "wip";
 export type ProjectType = "web" | "download" | "bot" | "showcase";
 
 export interface ProjectLink {
-  label: "Demo" | "GitHub" | "Docs" | "Download";
+  label: "Demo" | "GitHub" | "Docs" | "Download" | "Info";
   href: string;
   external?: boolean;
 }
@@ -59,6 +59,7 @@ export const projects: Project[] = [
     links: [
       { label: "Download", href: "https://github.com/whojosegonzalez/minuteflow/releases", external: true },
       { label: "GitHub", href: "https://github.com/whojosegonzalez/minuteflow", external: true },
+      { label: "Info", href: "/minuteflow" },
     ],
   },
   {
