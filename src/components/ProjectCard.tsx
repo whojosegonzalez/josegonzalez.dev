@@ -7,7 +7,8 @@ const badgeColor: Record<Project["status"], string> = {
   wip:  "bg-amber-600",
 };
 
-export default function ProjectCard({ p }: { p: Project }) {
+// Fix 1: Added 'readonly' to the prop definition
+export default function ProjectCard({ p }: { readonly p: Project }) {
   return (
     <article
       className="group rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 hover:shadow-lg transition"
@@ -49,7 +50,7 @@ export default function ProjectCard({ p }: { p: Project }) {
           {p.links.map((l) => (
             <a
               key={l.label}
-              href={l.href.startsWith("http") ? l.href : l.href} // allows internal or external
+              href={l.href} // Fix 2: Removed redundant conditional check
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noopener noreferrer" : undefined}
               className="text-sm font-medium px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800"
