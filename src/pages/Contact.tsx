@@ -1,4 +1,5 @@
 import { site } from "../config/site";
+import ContactForm from "../components/ContactForm"; // <-- Import the new form
 
 export default function Contact() {
   return (
@@ -11,8 +12,7 @@ export default function Contact() {
         </p>
       </header>
 
-      <div className="grid gap-4 sm:grid-cols-3">
-        {/* Email Card */}
+      <div className="grid gap-4 sm:grid-cols-3">        
         <a
           href={`mailto:${site.email}`}
           className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg transition duration-300"
@@ -25,7 +25,6 @@ export default function Contact() {
           </span>
         </a>
 
-        {/* GitHub Card */}
         <a
           href={site.github}
           target="_blank"
@@ -40,7 +39,6 @@ export default function Contact() {
           </span>
         </a>
 
-        {/* LinkedIn Card */}
         <a
           href={site.linkedin}
           target="_blank"
@@ -54,6 +52,11 @@ export default function Contact() {
             Let's connect
           </span>
         </a>
+      </div>
+
+      <div className="mt-12 pt-12 border-t border-slate-200 dark:border-slate-800">
+        <h2 className="text-2xl font-bold text-center mb-8">Or Send a Message Directly</h2>
+        <ContactForm />
       </div>
     </section>
   );

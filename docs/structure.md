@@ -12,38 +12,51 @@ A living map of all key folders and files.
 | `/package.json` | Dependencies and scripts |
 | `/tsconfig.json` | TypeScript settings |
 | `/public/assets/` | Static images (project covers, logos) |
+
 ---
 
 ## src/
 | Path | Purpose |
 |------|----------|
-| `/src/main.tsx` | App entry, sets up React Router and global providers |
-| `/src/index.css` | Imports Tailwind base styles |
+| `/src/main.tsx` | App entry, sets up Router, ThemeProvider, and SEO |
+| `/src/index.css` | Imports Tailwind base styles & Theme variants |
 | `/src/config/site.ts` | Global site config (email, links, name) |
+
+### src/context/
+| Path | Purpose |
+|------|---------|
+| `/src/context/ThemeContext.tsx` | **NEW**: Handles Dark/Light mode persistence & toggling |
+
+### src/hooks/
+| Path | Purpose |
+|------|---------|
+| `/src/hooks/usePageTitle.ts` | **NEW**: Updates browser tab title based on current route |
 
 ### src/layouts/
 | Path | Purpose |
 |------|----------|
-| `/src/layouts/RootLayout.tsx` | Main wrapper (Header, Footer, Outlet) |
-| `/src/layouts/ShowcaseLayout.tsx` | **NEW**: Generic wrapper for static project write-ups (standardizes titles/typography) |
+| `/src/layouts/RootLayout.tsx` | Main wrapper (Header, Footer, SEO hook) |
+| `/src/layouts/ShowcaseLayout.tsx` | Generic wrapper for static project write-ups |
 
 ### src/components/
 | Path | Purpose |
 |------|---------|
-| `/src/components/Header.tsx` | Navigation bar with active links |
+| `/src/components/Header.tsx` | Navigation bar with Theme Toggle |
 | `/src/components/Footer.tsx` | Footer with contact links |
 | `/src/components/ProjectCard.tsx` | Reusable card component for the Projects grid |
-| `/src/components/ScrollToTop.tsx` | **NEW**: Utility that forces scroll to top on route change |
+| `/src/components/ContactForm.tsx` | **NEW**: Netlify-ready contact form with validation |
+| `/src/components/ScrollToTop.tsx` | Utility that forces scroll to top on route change |
 
 ### src/pages/
 | Path | Purpose |
 |------|----------|
 | `/src/pages/Home.tsx` | Landing page (Hero, About, Featured, Downloads) |
 | `/src/pages/Projects.tsx` | Full grid of all projects |
-| `/src/pages/Contact.tsx` | Contact cards (Email, GitHub, LinkedIn) |
-| `/src/pages/MovieAggregator.tsx` | **NEW**: Static write-up for Movie project |
-| `/src/pages/NeXusTrade.tsx` | **NEW**: Static write-up for Trading Bot project |
-| `/src/pages/MinuteFlow.tsx` | **NEW**: Landing page for MinuteFlow desktop app |
+| `/src/pages/Contact.tsx` | Contact cards + Contact Form |
+| `/src/pages/NotFound.tsx` | **NEW**: Custom 404 Error page |
+| `/src/pages/MovieAggregator.tsx` | Static write-up for Movie project |
+| `/src/pages/NeXusTrade.tsx` | Static write-up for Trading Bot project |
+| `/src/pages/MinuteFlow.tsx` | Landing page for MinuteFlow desktop app |
 
 ---
 
