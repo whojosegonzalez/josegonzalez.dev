@@ -1,4 +1,11 @@
 @import "tailwindcss";
 
-/* optional demo styles so you see it clearly working */
-:root { color-scheme: light dark; }
+/* Force "dark" variants to apply ONLY when the .dark class is present 
+   (overriding the default system-preference behavior)
+*/
+@variant dark (&:where(.dark, .dark *));
+
+/* Set native browser UI elements (like scrollbars) to match */
+:root {
+  color-scheme: light dark;
+}
