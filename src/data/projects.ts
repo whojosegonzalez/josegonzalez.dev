@@ -14,7 +14,7 @@ export interface Project {
   status: ProjectStatus;
   kind: ProjectType;
   tech: string[];
-  image?: string; // relative path in /assets, optional
+  image?: string;
   links: ProjectLink[];
 }
 
