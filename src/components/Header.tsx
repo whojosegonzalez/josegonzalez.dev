@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle";
+
 
 export default function Header() {
   const linkBase =
@@ -12,7 +14,7 @@ export default function Header() {
         <Link to="/" className="font-bold tracking-tight text-lg">
           josegonzalez.dev
         </Link>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-3">
           <NavLink to="/" end
             className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkInactive}`}>
             Home
@@ -25,6 +27,7 @@ export default function Header() {
             className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkInactive}`}>
             Contact
           </NavLink>
+          <ThemeToggle />
         </div>
       </nav>
     </header>
