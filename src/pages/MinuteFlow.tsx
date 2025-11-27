@@ -5,6 +5,7 @@ export default function MinuteFlow() {
     <ShowcaseLayout
       title="MinuteFlow"
       subtitle="A purpose-built desktop application for managing construction meeting minutes."
+      currentSlug="minuteflow"
     >
       <div className="flex flex-col sm:flex-row gap-4 mb-8">
         <a 

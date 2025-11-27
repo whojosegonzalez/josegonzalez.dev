@@ -5,6 +5,7 @@ export default function MovieAggregator() {
     <ShowcaseLayout
       title="Movie Aggregator"
       subtitle="A Big Data experiment using Hadoop and MapReduce to analyze millions of movie ratings."
+      currentSlug="movie-aggregator"
     >
       <p>
         <strong>Overview</strong>

@@ -5,6 +5,7 @@ export default function NeXusTrade() {
     <ShowcaseLayout
       title="NeXusTrade"
       subtitle="An automated Solana trading bot designed to detect and trade high-velocity altcoin movements."
+      currentSlug="nexustrade"
     >
       <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 rounded-md text-amber-800 dark:text-amber-200 text-sm">
         <strong>Work In Progress:</strong> This project is currently in active development. Strategies are being backtested.

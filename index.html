@@ -2,19 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Jose Gonzalez | Software Engineer</title>
+    <meta name="description" content="Portfolio of Jose Manuel Gonzalez Alfaro. Full-stack development, cloud architecture, and automation tools." />
+    <meta name="author" content="Jose Gonzalez" />
+
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    <link rel="apple-touch-icon" href="/assets/logo.png" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://josegonzalez.dev/" />
+    <meta property="og:title" content="Jose Gonzalez | Software Engineer" />
+    <meta property="og:description" content="Building clean, secure, and performant apps. Explore my projects in web, desktop, and automation." />
+    
+    <meta property="og:image" content="https://josegonzalez.dev/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <script>
-      (() => {
+      (function() {
         try {
-          const ls = localStorage.getItem('theme'); // 'dark' | 'light' | null
-          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          const wantDark = ls ? ls === 'dark' : systemDark;
-          document.documentElement.classList.toggle('dark', wantDark);
-        } catch {}
+          const saved = localStorage.getItem("theme");
+          // Fix: Use globalThis to satisfy linter
+          const prefersDark = globalThis.matchMedia("(prefers-color-scheme: dark)").matches;
+          
+          if (saved === "dark" || (!saved && prefersDark)) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {
+          // Fallback if matchMedia isn't supported
+        }
       })();
     </script>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>josegonzalez.dev</title>
   </head>
   <body>
     <div id="root"></div>
