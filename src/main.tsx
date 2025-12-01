@@ -3,18 +3,21 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
+// Eager Imports (Load immediately for better UX on main pages)
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import Resume from "./pages/Resume"; // <-- Kept this one
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./context/ThemeContext";
 
-// Lazy Load the heavy/secondary pages
+// Lazy Load the heavy/secondary pages (Only load when clicked)
 const MovieAggregator = lazy(() => import("./pages/MovieAggregator"));
 const NeXusTrade = lazy(() => import("./pages/NeXusTrade"));
 const MinuteFlow = lazy(() => import("./pages/MinuteFlow"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+// Deleted "const Resume = lazy..." to fix the name collision error
 
 // Create a simple Loading Spinner/Message component
 const PageLoader = () => (
@@ -30,12 +33,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <ScrollToTop />
         <Routes>
           <Route element={<RootLayout />}>
-            {/* Eager Routes (Load immediately) */}
+            {/* Eager Routes (Main Navigation) */}
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
             
-            {/* Lazy Routes (Load only when clicked) */}
+            {/* Lazy Routes (Project Details & 404) */}
             <Route path="/movieaggregator" element={
               <Suspense fallback={<PageLoader />}>
                 <MovieAggregator />

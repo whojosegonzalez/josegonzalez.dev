@@ -10,7 +10,7 @@ export default function Header() {
   const linkInactive = "text-slate-700 hover:bg-gray-200 dark:text-slate-200 dark:hover:bg-slate-800";
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-200/80 dark:bg-slate-950/80 backdrop-blur border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <header className="sticky top-0 z-50 bg-gray-200/80 dark:bg-slate-950/80 backdrop-blur border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 print:hidden">
       <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <Link to="/" className="font-bold tracking-tight text-lg">
           josegonzalez.dev
@@ -24,6 +24,9 @@ export default function Header() {
             <NavLink to="/projects" className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkInactive}`}>
               Projects
             </NavLink>
+            <NavLink to="/resume" className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkInactive}`}>
+              Resume
+            </NavLink>
             <NavLink to="/contact" className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkInactive}`}>
               Contact
             </NavLink>
@@ -33,7 +36,7 @@ export default function Header() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle Dark Mode"
-            className="ml-2 p-2 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="ml-2 p-2 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
           >
             {theme === "dark" ? (
               // Sun Icon (for Dark Mode)

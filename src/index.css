@@ -9,3 +9,9 @@
 :root {
   color-scheme: light dark;
 }
+
+@media print {
+  @page {
+    margin: 1cm; /* Sets browser default print margin to ~0.4 inches */
+  }
+}
