@@ -23,18 +23,15 @@ The personal portfolio and interactive resume for Jose Manuel Gonzalez Alfaro, h
 ## Local Development
 
 1. **Clone the repository**
-```
+```bash
 git clone [https://github.com/whojosegonzalez/josegonzalez.dev.git](https://github.com/whojosegonzalez/josegonzalez.dev.git)
 cd josegonzalez.dev
 ```
 2. **Install Dependencies**
-  ```
+  ```bash
 npm install 
   ```
 3. **Start the dev server**
-  ```
+  ```bash
 npm run dev
   ```
-
-## License
-  This project is open source
