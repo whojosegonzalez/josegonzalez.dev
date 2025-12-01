@@ -3,99 +3,130 @@ import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
+const skills = [
+  "React 19", "TypeScript", "Tailwind CSS", "Node.js", "Python", "Java", "Git/GitHub"
+];
+
 export default function Home() {
-  /**
-   * Data Logic:
-   * 1. Featured: Automatically grabs the first 2 projects to show as "Featured".
-   * 2. Downloads: Filters specifically for items marked as "download" (like MinuteFlow)
-   * to fulfill the "Downloadable Tools" requirement from Phase 1.
-   */
   const featuredProjects = projects.slice(0, 2);
   const downloadProjects = projects.filter((p) => p.kind === "download");
 
-  /**
-   * Animation Variants:
-   * A simple "Fade In + Slide Up" effect used for scroll reveals.
-   * hidden: Starting state (invisible, slightly shifted down)
-   * visible: End state (fully visible, natural position)
-   */
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
     <div className="space-y-24">
-      {/* HERO SECTION 
-        - Uses immediate animations (no scroll trigger) because it's "above the fold".
-        - Staggers the appearance of Title -> Text -> Buttons using the `delay` prop.
-      */}
-      <section className="text-center space-y-6 py-12 md:py-20">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold tracking-tight"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          Hello, I'm Jose.
-        </motion.h1>
-
-        <motion.p
-          className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.15, duration: 0.35 }}
-        >
-          Building clean, secure, and performant apps. This site is my hub for 
-          projects, tools, and experiments.
-        </motion.p>
-
+      {/* HERO SECTION */}
+      <section className="text-center space-y-8 py-12 md:py-20">
         <motion.div
-          className="flex items-center justify-center gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.25, duration: 0.35 }}
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="space-y-6"
         >
-          <Link
-            to="/projects"
-            className="px-6 py-2.5 rounded-md bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-medium hover:opacity-90 transition"
+          {/* NAME RESTORED HERE */}
+          <motion.div variants={fadeInUp}>
+            <span className="text-sm md:text-base font-bold tracking-widest text-slate-500 uppercase">
+              Jose Manuel Gonzalez
+            </span>
+          </motion.div>
+
+          <motion.h1
+            className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white"
+            variants={fadeInUp}
           >
-            View Projects
-          </Link>
-          <Link
-            to="/contact"
-            className="px-6 py-2.5 rounded-md border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition"
+            Bridge the gap between <br className="hidden sm:block" />
+            <span className="text-indigo-600 dark:text-indigo-400">Engineering</span> & <span className="text-emerald-600 dark:text-emerald-400">Execution</span>.
+          </motion.h1>
+
+          <motion.p
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed"
+            variants={fadeInUp}
           >
-            Contact Me
-          </Link>
+            Combining a B.S. in Computer Science with years of Project Management experience to build software that is structured, scalable, and delivered on time.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+            variants={fadeInUp}
+          >
+            <Link
+              to="/projects"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-md shadow-indigo-500/20"
+            >
+              View My Work
+            </Link>
+            <Link
+              to="/resume"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition"
+            >
+              View Resume
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* ABOUT ME SECTION 
-        - Triggers animation only when the user scrolls into view.
-        - viewport={{ once: true }} ensures it doesn't re-animate if the user scrolls up and down.
+      {/* TECH STACK STRIP (FIXED) 
+         Using 'w-screen' and negative margins to break out of the max-w-6xl container 
       */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-screen relative left-[calc(-50vw+50%)] border-y border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 py-12"
+      >
+        <div className="text-center max-w-6xl mx-auto px-4">
+          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-8">
+            Core Technologies
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6">
+            {skills.map((skill) => (
+              <span 
+                key={skill} 
+                className="text-sm md:text-base font-semibold text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-sm"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ABOUT ME SECTION */}
       <motion.section
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
         variants={fadeInUp}
-        className="max-w-3xl mx-auto text-center space-y-6"
+        className="max-w-3xl mx-auto text-center space-y-6 px-4"
       >
-        <h2 className="text-3xl font-bold">About Me</h2>
+        <h2 className="text-3xl font-bold">The "PM-Engineer" Advantage</h2>
+        <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+          Most developers just write code. Coming from a background managing multi-million dollar 
+          construction projects, I understand that <strong>code is just one part of the delivery</strong>.
+        </p>
         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-          I am a software engineer focused on solving real-world problems through code. 
-          My goal with <strong className="font-semibold text-slate-900 dark:text-white">JoseGonzalez.dev</strong> is to move away from expensive website builders 
-          and create a centralized, custom-built home for all my software, including 
-          web apps, desktop tools, and automation bots.
+          Whether it's automating workflows with Python, building dashboards in React, or architecting 
+          data pipelines with Java, I bring the same rigor to software that I brought to physical infrastructure: 
+          <br></br><strong> meticulous planning, clear communication, and a focus on the end-user.</strong>
         </p>
       </motion.section>
 
-      {/* FEATURED PROJECTS SECTION 
-        - Shows the top 2 projects.
-        - Includes a "View all" link to the full /projects page.
-      */}
+      {/* FEATURED PROJECTS SECTION */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -118,10 +149,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* DOWNLOADABLE TOOLS SECTION 
-        - Conditionally rendered: Only appears if there are projects with kind="download".
-        - This ensures the UI doesn't break if you haven't released a tool yet.
-      */}
+      {/* DOWNLOADABLE TOOLS SECTION */}
       {downloadProjects.length > 0 && (
         <motion.section
           initial="hidden"

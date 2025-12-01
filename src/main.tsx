@@ -8,7 +8,7 @@ import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Resume from "./pages/Resume"; // <-- Kept this one
+import Resume from "./pages/Resume";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -17,6 +17,7 @@ const MovieAggregator = lazy(() => import("./pages/MovieAggregator"));
 const NeXusTrade = lazy(() => import("./pages/NeXusTrade"));
 const MinuteFlow = lazy(() => import("./pages/MinuteFlow"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const SecureChat = lazy(() => import("./pages/SecureChat"));
 // Deleted "const Resume = lazy..." to fix the name collision error
 
 // Create a simple Loading Spinner/Message component
@@ -38,7 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/projects" element={<Projects />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
-            
+            <Route path="/securechat" element={<SecureChat />} />
             {/* Lazy Routes (Project Details & 404) */}
             <Route path="/movieaggregator" element={
               <Suspense fallback={<PageLoader />}>

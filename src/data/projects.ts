@@ -29,8 +29,9 @@ export const projects: Project[] = [
     tech: ["React", "Tailwind", "Quart", "WebSockets", "MySQL"],
     image: "/assets/securechat.jpg",
     links: [
-      { label: "Demo", href: "https://securechat.josegonzalez.dev", external: true },
-      { label: "GitHub", href: "https://github.com/whojosegonzalez/securechat", external: true },
+      //{ label: "Demo", href: "https://securechat.josegonzalez.dev", external: true },
+      { label: "Info", href: "/securechat" },
+      //{ label: "GitHub", href: "https://github.com/whojosegonzalez/securechat", external: true },
     ],
   },
   {
@@ -44,7 +45,7 @@ export const projects: Project[] = [
     image: "/assets/movie-aggregator.jpg",
     links: [
       { label: "Info", href: "/movieaggregator" },
-      { label: "GitHub", href: "https://github.com/whojosegonzalez/<movie-aggregator-repo>", external: true },
+      //{ label: "GitHub", href: "https://github.com/whojosegonzalez/<movie-aggregator-repo>", external: true },
     ],
   },
   {
@@ -57,8 +58,8 @@ export const projects: Project[] = [
     tech: ["Windows", "Python/Node", "Docx/PDF"],
     image: "/assets/minuteflow.jpg",
     links: [
-      { label: "Download", href: "https://github.com/whojosegonzalez/minuteflow/releases", external: true },
-      { label: "GitHub", href: "https://github.com/whojosegonzalez/minuteflow", external: true },
+     // { label: "Download", href: "https://github.com/whojosegonzalez/minuteflow/releases", external: true },
+      //{ label: "GitHub", href: "https://github.com/whojosegonzalez/minuteflow", external: true },
       { label: "Info", href: "/minuteflow" },
     ],
   },
@@ -70,9 +71,9 @@ export const projects: Project[] = [
     status: "wip",
     kind: "bot",
     tech: ["TypeScript", "Solana APIs", "Node"],
-    image: "/assets/nexustrade.jpg",
+    image: "/assets/nexustrade.png",
     links: [
-      { label: "GitHub", href: "https://github.com/whojosegonzalez/nexustrade", external: true },
+     // { label: "GitHub", href: "https://github.com/whojosegonzalez/nexustrade", external: true },
       { label: "Info", href: "/nexustrade" },
     ],
   },
