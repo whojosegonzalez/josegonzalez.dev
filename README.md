@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# Jose Gonzalez - Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The personal portfolio and interactive resume for Jose Manuel Gonzalez Alfaro, hosting my software projects, "Phase 1" transition roadmap, and professional background.
 
-Currently, two official plugins are available:
+**Live Site:** [https://josegonzalez.dev](https://josegonzalez.dev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4eeb6cf7-ba5b-4e1b-912b-fa4672bdfb84/deploy-status)](https://app.netlify.com/projects/josegonzalez/deploys)
 
-## React Compiler
+## 🛠 Tech Stack
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS v4
+- **Routing:** React Router v7
+- **Animation:** Framer Motion
+- **Deployment:** Netlify (CI/CD via GitHub) + Cloudflare DNS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Features
+- **Interactive Resume:** A dedicated `/resume` page that reformats into a clean, standard document when printed to PDF.
+- **Dark Mode:** System-preference aware theme toggle with persistence.
+- **Dynamic Meta Tags:** SEO-friendly titles using custom hooks.
+- **Project Filtering:** Categorized showcase of web apps, bots, and tools.
 
-## Expanding the ESLint configuration
+## Local Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone the repository**
+   ```bash
+  git clone [https://github.com/whojosegonzalez/josegonzalez.dev.git](https://github.com/whojosegonzalez/josegonzalez.dev.git)
+  cd josegonzalez.dev
+   ```
+2. **Install Dependencies**
+  ```bash 
+  npm install 
+  ```
+3. **Start the dev server**
+  ```bash
+  npm run dev
+  ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+  This project is open source
