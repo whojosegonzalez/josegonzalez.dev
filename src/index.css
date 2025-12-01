@@ -15,3 +15,19 @@
     margin: 1cm; /* Sets browser default print margin to ~0.4 inches */
   }
 }
+
+@media print {
+  :root, html, body {
+    background-color: white !important;
+    color: black !important;
+    
+    /* Forces the browser to ignore the dark color scheme preference */
+    color-scheme: light !important; 
+  }
+
+  /* Force the .dark class to behave like light mode during print */
+  .dark {
+    background-color: white !important;
+    color: black !important;
+  }
+}
