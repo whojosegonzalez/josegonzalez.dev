@@ -8,15 +8,24 @@
     <meta name="description" content="Portfolio of Jose Manuel Gonzalez Alfaro. Full-stack development, cloud architecture, and automation tools." />
     <meta name="author" content="Jose Gonzalez" />
 
-    <link rel="icon" type="image/png" href="/assets/logo.png" />
-    <link rel="apple-touch-icon" href="/assets/logo.png" />
-    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a">
+    
+    <meta name="msapplication-TileColor" content="#0f172a">
+    <meta name="theme-color" content="#0f172a">
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://josegonzalez.dev/" />
     <meta property="og:title" content="Jose Gonzalez | Software Engineer" />
     <meta property="og:description" content="Building clean, secure, and performant apps. Explore my projects in web, desktop, and automation." />
-    
     <meta property="og:image" content="https://josegonzalez.dev/assets/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -26,17 +35,13 @@
       (function() {
         try {
           const saved = localStorage.getItem("theme");
-          // Fix: Use globalThis to satisfy linter
           const prefersDark = globalThis.matchMedia("(prefers-color-scheme: dark)").matches;
-          
           if (saved === "dark" || (!saved && prefersDark)) {
             document.documentElement.classList.add("dark");
           } else {
             document.documentElement.classList.remove("dark");
           }
-        } catch (e) {
-          // Fallback if matchMedia isn't supported
-        }
+        } catch (e) {}
       })();
     </script>
   </head>
